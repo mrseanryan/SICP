@@ -1,0 +1,15 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {},
+  "extensions": {
+    "recommendations": [
+      "sjhuangx.vscode-scheme",
+      "cospaia.paredit-revived"
+    ],
+    "unwantedRecommendations": []
+  }
+}
