@@ -1,5 +1,5 @@
 ; solution 1
-(display "solution 1")
+(display "solution 1\n")
 (define (sum-of-squares-2 a b)
   (+ (square a) (square b)))
 
@@ -17,7 +17,7 @@
 (sum-of-squares-3 1 1 2)
 
 ; solution 2
-(display "solution 2")
+(display "\nsolution 2\n")
 
 ; (define (max x y)
 ;   (if (> x y) x y))
