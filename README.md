@@ -40,6 +40,10 @@ The standard file extensions are `.scm` or `.ss`
 
 but `.clj` (Clojure) is similar and has better Visual Code support (e.g. formatting).
 
+#### Visual Code Extensions
+
+This repo has a workspace setup with some recommended extensions, that help with formatting Scheme files.
+
 ## authors
 
 Notes are by Sean Ryan - mr.sean.ryan(at gmail.com) - any errors are entirely mine!
