@@ -8,7 +8,8 @@
   "extensions": {
     "recommendations": [
       "sjhuangx.vscode-scheme",
-      "cospaia.paredit-revived"
+      "cospaia.paredit-revived",
+      "esbenp.prettier-vscode"
     ],
     "unwantedRecommendations": []
   }
