@@ -50,14 +50,36 @@ but `.clj` (Clojure) is similar and has better Visual Code support (e.g. formatt
 
 This repo has a workspace setup with some recommended extensions, that help with formatting Scheme files.
 
-##### racket - more fully developed
+##### racket - more fully developed language?
 
-racket is possibly the most complete implementation of Scheme,
+racket is possibly a more complete implementation of Scheme,
 with graphics support, and its own IDE (DrRacket)
+
+*"instead of a “minimalist” language—which is the way that Scheme is often described — Racket offers a rich language with an extensive set of libraries and tools"*
 
 https://docs.racket-lang.org/
 
 https://docs.racket-lang.org/quick/index.html
+
+## further reading (beyond SICP)
+
+- How to Design Programs - https://htdp.org/
+
+### Racket
+
+- Web Applications in Racket - https://docs.racket-lang.org/continue/index.html
+
+- Systems Programming with Racket - https://docs.racket-lang.org/more/index.html
+
+- The Racket Guide - https://docs.racket-lang.org/guide/index.html
+
+### Scala
+
+[Scala and SICP](https://blog.usejournal.com/quickly-learning-the-basics-of-scala-through-structure-and-interpretation-of-computer-programs-ed5bfa90e8dc?gi=e39cb84eef6c)
+
+- Quickly learning the basics of Scala through Structure and Interpretation of Computer Programs…
+
+[book: Functional programming in Scala](https://www.bol.com/nl/p/functional-programming-in-scala/9200000011141605/?Referrer=ADVNLGOO002008J-VTCEETBYONRDO-312194578750&gclsrc=aw.ds&ds_rl=1263476&Referrer=ADVNLGOO002008J-VTCEETBYONRDO-312194578750&gclid=CjwKCAjw4LfkBRBDEiwAc2DSlGXukuy5losEz-q9Z7Cp8iPYBdnJOhDyNth5y1Bbh1uqG3qnJfLe4hoCBDYQAvD_BwE)
 
 ## authors
 
