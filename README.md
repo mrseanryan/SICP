@@ -16,6 +16,12 @@ Tested on Ubuntu 18.04
 
 https://mitpress.mit.edu/sites/default/files/sicp/index.html
 
+#### lectures, course notes, assignments
+
+http://www.billthelizard.com/2009/10/sicp-challenge.html
+
+https://ocw.mit.edu/index.htm
+
 #### source code from the book
 
 https://mitpress.mit.edu/sites/default/files/sicp/code/index.html
