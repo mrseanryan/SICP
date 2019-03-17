@@ -1,3 +1,4 @@
+; imports the module 'slideshow'
 #lang slideshow
 
 ;__________________________
@@ -94,3 +95,84 @@
 
 (series (rgb-maker filled-circle))
 
+;__________________________
+; 8 - Lists
+(display "8 - Lists\n")
+
+(list "red" "green" "blue")
+(list (circle 10) (square 10) (filled-circle 15))
+
+(define (rainbow p)
+  (map (lambda (color)
+         (colorize p color))
+       (list "red" "orange" "yellow" "green" "blue" "purple" "violet")))
+
+(rainbow (filled-circle 10))
+
+; The apply function bridges the gap between a function that wants many arguments and a list of those arguments as a single value.
+; so it 'destructures'
+(apply vc-append 5 (rainbow (square 5)))
+
+
+;__________________________
+; 9 - Modules
+(display "9 - Modules\n")
+; module 'pict', file 'flash'
+(require pict/flash)
+
+; filled-flash width height n-points spike-fraction rotation
+(filled-flash 40 30 12)
+(filled-flash 40 30 8)
+(filled-flash 40 30 5)
+(filled-flash 40 30 5 0.2)
+(filled-flash 40 30 5 0.2 45)
+(filled-flash 40 30 5 2)
+
+; export
+(provide rainbow square filled-circle)
+
+;__________________________
+; 10 - Macros
+(display "10 - Macros\n")
+
+(require slideshow/code)
+; writes out the given code
+(code (circle 10))
+
+(define-syntax pict+code
+  (syntax-rules ()
+    ; a macro:
+    [(pict+code expr)
+     ; macro instance is replaced with:
+     (hc-append 10
+                expr
+                (code expr))]))
+
+(pict+code (circle 10))
+
+;__________________________
+; 11 - Objects (!)
+(display "11 - Objects (!)\n")
+
+; The class system itself is implemented by the racket/class library, and the racket/gui/base library provides the GUI and drawing classes. By convention, the classes are given names that end with %:
+
+(require racket/class
+         racket/gui/base)
+(define f (new frame% [label "My Art"]
+                      [width 300]
+                      [height 300]
+                      [alignment '(center center)]))
+
+; send a message 'show' to object 'f', with param #t (true)
+(send f show #t)
+
+(define (add-drawing p)
+  (let ([drawer (make-pict-drawer p)])
+    (new canvas% [parent f]
+                 [style '(border)]
+                 [paint-callback (lambda (self dc)
+                                   (drawer dc 0 0))])))
+ 
+(add-drawing (pict+code (circle 10)))
+
+(add-drawing (colorize (filled-flash 50 30) "orange"))
