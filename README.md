@@ -34,15 +34,30 @@ http://community.schemewiki.org/
 
 http://web.mit.edu/~axch/www/scheme/choices/mit-scheme.html
 
-#### Scheme files
+#### Scheme implementations
+
+##### mit-scheme - very basic
+
+http://web.mit.edu/~axch/www/scheme/choices/mit-scheme.html
+
+**mit-scheme files**
 
 The standard file extensions are `.scm` or `.ss`
 
 but `.clj` (Clojure) is similar and has better Visual Code support (e.g. formatting).
 
-#### Visual Code Extensions
+**mit-scheme and Visual Code Extensions**
 
 This repo has a workspace setup with some recommended extensions, that help with formatting Scheme files.
+
+##### racket - more fully developed
+
+racket is possibly the most complete implementation of Scheme,
+with graphics support, and its own IDE (DrRacket)
+
+https://docs.racket-lang.org/
+
+https://docs.racket-lang.org/quick/index.html
 
 ## authors
 
