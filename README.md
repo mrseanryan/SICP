@@ -26,7 +26,7 @@ http://community.schemewiki.org/?sicp-solutions
 
 http://www.billthelizard.com/search/label/sicp
 
-### Scheme language (LISP + Algol)
+## Scheme language (LISP + Algol)
 
 http://groups.csail.mit.edu/mac/projects/scheme/
 
@@ -34,9 +34,9 @@ http://community.schemewiki.org/
 
 http://web.mit.edu/~axch/www/scheme/choices/mit-scheme.html
 
-#### Scheme implementations
+## Scheme implementations
 
-##### mit-scheme - very basic
+### mit-scheme - very basic
 
 http://web.mit.edu/~axch/www/scheme/choices/mit-scheme.html
 
@@ -50,12 +50,14 @@ but `.clj` (Clojure) is similar and has better Visual Code support (e.g. formatt
 
 This repo has a workspace setup with some recommended extensions, that help with formatting Scheme files.
 
-##### racket - more fully developed language?
+### Racket - a more fully developed language?
 
 racket is possibly a more complete implementation of Scheme,
 with graphics support, and its own IDE (DrRacket)
 
 *"instead of a “minimalist” language—which is the way that Scheme is often described — Racket offers a rich language with an extensive set of libraries and tools"*
+
+https://racket-lang.org/
 
 https://docs.racket-lang.org/
 
