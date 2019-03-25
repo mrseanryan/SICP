@@ -73,6 +73,10 @@ https://docs.racket-lang.org/
 
 https://docs.racket-lang.org/quick/index.html
 
+#### Racket and SICP
+
+https://docs.racket-lang.org/sicp-manual/
+
 ### Others
 
 - guile - (common in Linux) - https://www.gnu.org/software/guile/
