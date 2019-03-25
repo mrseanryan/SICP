@@ -16,6 +16,10 @@ Tested on Ubuntu 18.04
 
 https://mitpress.mit.edu/sites/default/files/sicp/index.html
 
+#### pretty printed
+
+http://sarabander.github.io/sicp/html/index.xhtml
+
 #### lectures, course notes, assignments
 
 http://www.billthelizard.com/2009/10/sicp-challenge.html
