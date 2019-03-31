@@ -3,7 +3,7 @@
 (require racket/trace)
 
 (display "_____________________________\n")
-(display "Prove Fib(n) is the closest integer to phi^n//sqrt(5) \n");
+(display "Prove Fib(n) is the closest integer to phi^n/sqrt(5) \n");
 
 ; Induction: f(0), f(n), f(n+1) -> proven for all n natural numbers.
 
@@ -68,9 +68,9 @@
   (test-fun "fib-via-phi" fib-via-phi n)
   )
 
-; __________________________
 ;(trace fun)
 
+; __________________________
 ; INDUCTION
 
 ; n = 0
@@ -84,3 +84,28 @@
 (fib-test 4)
 (fib-test 5)
 (fib-test 6)
+
+(display "__________________________\n")
+(display "Experiments with golden ratio (phi)\n")
+
+(display (format "phi^2 = ~a = phi + 1 = ~a\n" (* phi phi) (+ 1 phi) ))
+
+(define (phi-via-fib n)
+  (* (sqrt 5) (fib n))
+  )
+
+(define (phi-to-pow n)
+  (pow phi n)
+  )
+
+(define (phi-test n)
+  (test-fun "phi-to-pow" phi-to-pow n)
+  (test-fun "phi-via-fib" phi-via-fib n)
+  )
+
+(phi-test 1)
+(phi-test 2)
+(phi-test 3)
+(phi-test 4)
+(phi-test 5)
+(phi-test 6)
