@@ -8,8 +8,6 @@ Tested on Ubuntu 18.04
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[![Donate](https://img.shields.io/badge/donate-paypal-blue.svg)](https://paypal.me/mrseanryan)
-
 ## web sites
 
 ### SICP book
