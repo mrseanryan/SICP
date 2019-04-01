@@ -109,6 +109,12 @@ https://docs.racket-lang.org/sicp-manual/
 
 Notes are by Sean Ryan - mr.sean.ryan(at gmail.com) - any errors are entirely mine!
 
+### collaborating
+
+- make yourself a new folder under `src/exercises`
+- add your files there
+- push direct to master (unless you want a code review)
+
 ## licence = MIT
 
 This repo is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
