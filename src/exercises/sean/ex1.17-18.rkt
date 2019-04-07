@@ -15,7 +15,7 @@
   )
 
 ; ___________________________________________
-; basic iter solution
+; 1.17 basic iter solution
 (define (basic-iter-mult b n)
   (define (basic-iter-mult-inner b_ counter result)
     (if (= counter 0)
@@ -31,7 +31,7 @@
   )
 
 ; ___________________________________________
-; iter solution - logarithmic number of steps
+; 1.17 iter solution - logarithmic number of steps
 
 (define (iter-mult a b)
   (cond ((= b 0) 0)
@@ -41,4 +41,19 @@
         )
   )
 
-(provide basic-iter-mult iter-mult)
+; ___________________________________________
+; 1.18 iter solution - logarithmic number of steps - invariant quantity
+
+(define (iter-mult-inv a b c)
+  (cond ((= b 0) c)
+        ;((= b 1) a)
+        (  (even b) (iter-mult-inv (double a) (halve b) c) )
+        (else (iter-mult-inv a (- b 1) (+ c a) ) )    
+        )
+  )
+
+(define (iter-mult-invariant a b)
+  (iter-mult-inv a b 0)
+  )
+
+(provide basic-iter-mult iter-mult iter-mult-invariant)

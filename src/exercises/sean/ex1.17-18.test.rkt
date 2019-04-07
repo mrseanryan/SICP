@@ -2,7 +2,7 @@
 (require sicp)
 (require rackunit/chk)
 
-(require "ex1.17.rkt")
+(require "ex1.17-18.rkt")
 
 (define (chk-fun fun)
   (chk
@@ -22,3 +22,4 @@
 
 (chk-fun basic-iter-mult)
 (chk-fun iter-mult)
+(chk-fun iter-mult-invariant)
