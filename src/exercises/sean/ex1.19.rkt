@@ -38,7 +38,7 @@
   )
 
 ; from the book p.47:
-(define (fib n)
+(define (fib-t n)
   (fib-iter 1 0 0 1 n)
   )
 
@@ -64,4 +64,4 @@
   )
 
 
-(provide fib fib-rec)
+(provide fib-t fib-rec)

@@ -19,4 +19,4 @@
   )
 
 (chk-fun fib-rec)
-(chk-fun fib)
+(chk-fun fib-t)
