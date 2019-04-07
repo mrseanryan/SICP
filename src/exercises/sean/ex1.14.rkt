@@ -39,4 +39,4 @@
 
 (provide count-change cc)
 
-; TODO opimize - via memoization - ex 3.27 p. 272
+; TODO optimize - p.41 -> via memoization - ex 3.27 p. 272
