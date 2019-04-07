@@ -1,3 +1,6 @@
+#lang racket
+(require sicp)
+
 10
 
 (+ 5 3 4)

@@ -1,3 +1,6 @@
+#lang racket
+(require sicp)
+
 (define (p) (p))
 
 (define (test x y)

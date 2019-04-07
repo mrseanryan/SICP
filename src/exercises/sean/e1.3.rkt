@@ -1,3 +1,6 @@
+#lang racket
+(require sicp)
+
 ; solution 1
 (display "solution 1\n")
 (define (sum-of-squares-2 a b)
