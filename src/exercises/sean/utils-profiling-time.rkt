@@ -5,7 +5,9 @@
 ; profiling tests (time taken)
 
 (define (repeat-fun fun count result)
-  (cond ((= count 0) 0)
+  (cond 
+    ; not returning result, as it makes output hard to read
+    ((= count 0) "[done]")
         (else 
          (repeat-fun fun (- count 1) (fun) )
          )
