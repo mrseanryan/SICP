@@ -10,3 +10,6 @@ sudo apt-get install racket
 
 # Add SICP support to Racket
 raco pkg install sicp
+
+# Add unit test shorthand
+raco pkg install rackunit-chk

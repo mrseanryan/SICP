@@ -34,4 +34,9 @@
         )
   )
 
-(provide count-change)
+;(trace count-change)
+;(trace cc)
+
+(provide count-change cc)
+
+; TODO opimize - via memoization - ex 3.27 p. 272
