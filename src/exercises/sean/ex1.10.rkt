@@ -2,6 +2,8 @@
 (require racket/trace)
 (require slideshow/code)
 
+(require "utils-debug.rkt")
+
 (display "exercise 1.10 - output of a complex function\n")
 
 ; Ackermann's function
@@ -13,18 +15,6 @@
                    )
                 )
          )
-  )
-
-
-(define-syntax run+code
-  (syntax-rules ()
-    ; a macro:
-    [(run+code expr)
-     ; macro instance is replaced with:
-     (append 
-      (list (code expr))
-      expr)
-     ])
   )
 
 (trace A)
