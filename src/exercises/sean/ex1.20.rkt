@@ -1,11 +1,17 @@
 #lang racket
 (require sicp)
-(require racket/trace)
-
-(require "utils-debug.rkt")
 
 ; __________________________
-; phi function
+; gcd (Greatesr Common Divisor)
+
+(define (gcd_ a b)
+  (if (= b 0) a
+      (gcd_ b (remainder a b))
+      )
+  )
+
+; __________________________
+; phi defined
 
 (define phi
   (/ (+ 1 (sqrt 5) )
@@ -13,13 +19,4 @@
      )
   )
 
-(display "estimating steps k for (gcd 206 40)\n")
-
-(run+code 
- (/ ( log (* 40 (sqrt 5))  )
-    (log phi) )
- )
-
-
-(display "manual esimate for appicative order: k = 4\n")
-(display "manual esimate for normal order: k = 7\n")
+(provide gcd_ phi)
