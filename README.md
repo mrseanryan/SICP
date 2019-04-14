@@ -20,13 +20,13 @@ http://sarabander.github.io/sicp/html/index.xhtml
 
 #### lectures, course notes, assignments
 
-http://www.billthelizard.com/2009/10/sicp-challenge.html
-
 MIT resouces: https://ocw.mit.edu/search/ocwsearch.htm?q=sicp
 
 MIT lecture videos: https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/video-lectures/
 
 MIT lecture notes: https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/lecture-notes/
+
+http://www.billthelizard.com/2009/10/sicp-challenge.html
 
 #### source code from the book
 
