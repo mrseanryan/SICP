@@ -1,4 +1,5 @@
 #lang racket
+(#%require (lib "27.ss" "srfi")) ; for random-integer to get rands bigger than about 4e9
 
 (require "utils-define-sourced-proc.rkt")
 
@@ -46,7 +47,8 @@
     )
 
   ; rand 1..n-1
-  (try-it (+ 1 (random (- n 1) ) ) )
+  ; note: random breaks if param > 4294967087 (4e9)
+  (try-it (+ 1 (random-integer (- n 1) ) ) )
   )
 
 (define-proc (fast-prime? n [times 10])
@@ -57,4 +59,3 @@
   )
 
 (provide smallest-divisor prime? find-divisor fast-prime?)
-
