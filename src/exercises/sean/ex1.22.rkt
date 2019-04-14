@@ -44,7 +44,7 @@
       )
   )
 
-; profile code - repeating to avoid spurious results
+; profile code - repeating to avoid spurious results (e.g. due to CPU or disk contention)
 (time-repeated-fun (lambda () (prime? 97)) 1000 "prime? - 97")
 
 (define (profile-primes n)
@@ -53,10 +53,18 @@
 
 (trace search-for-primes)
 
+(display "small numbers growing by 10\n")
 (profile-primes 1000)
 (profile-primes 10000)
 (profile-primes 100000)
 (profile-primes 1000000)
+(display "note: times do not increase by sqrt 10 - numbers are small and factors other than algorithm prevail?")
+
+(display "bigger numbers\n")
+(profile-primes 1e9)
+(profile-primes 1e10)
+(profile-primes 1e11)
+(display "note: times DO increase by sqrt 10 - (about x 3)")
 
 ; dump code
 search-for-primes-count
