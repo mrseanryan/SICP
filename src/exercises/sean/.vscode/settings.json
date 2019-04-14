@@ -1,0 +1,6 @@
+{
+    "files.exclude": {
+        "**/*.rkt~": true,
+        "**/compiled": true
+    }
+}
