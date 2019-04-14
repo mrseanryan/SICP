@@ -1,5 +1,4 @@
 #lang racket
-(require sicp)
 
 (require "utils-define-sourced-proc.rkt")
 
@@ -29,5 +28,33 @@
      )
   )
 
-(provide smallest-divisor prime? find-divisor)
+; __________________________________
+; The Fermat Test (Fermat's Little Theorem)
+
+; like 'rem base^exp m', using successive squaring for efficiency
+(define (expmod base exp m  )
+  (cond ( (= exp 0) 1 )
+        ( (even? exp) ( remainder ( square (expmod base (/ exp 2) m) ) m  ) )
+        (else (remainder (* base (expmod base (- exp 1) m) ) m )  )
+        )
+  )
+
+(define (fermat-test n)
+  (define (try-it a)
+    ; like 'rem a^n n'
+    (= (expmod a n n) a)
+    )
+
+  ; rand 1..n-1
+  (try-it (+ 1 (random (- n 1) ) ) )
+  )
+
+(define-proc (fast-prime? n [times 10])
+  (cond ((= times 0) true)
+        ((fermat-test n) (fast-prime? n (- times 1)) )
+        (else false)
+        )
+  )
+
+(provide smallest-divisor prime? find-divisor fast-prime?)
 
