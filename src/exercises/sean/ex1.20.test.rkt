@@ -14,6 +14,11 @@
  (gcd_ 206 40) 2
  )
 
+; run and show the calling code:
+(run+code (gcd_ 206 40))
+; dump the source:
+gcd_
+
 ; __________________________
 ; estimating steps required
 
