@@ -23,8 +23,8 @@
   (= (remainder b a) 0)
   )
 
-(define-proc (prime? n)
-  (= n (smallest-divisor n)
+(define-proc (prime? n [smallest-divisor_ smallest-divisor])
+  (= n (smallest-divisor_ n)
      )
   )
 
