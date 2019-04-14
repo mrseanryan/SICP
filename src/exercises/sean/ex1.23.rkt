@@ -6,12 +6,16 @@
 (require "utils-profiling-time.rkt")
 
 (define (smallest-divisor-2 n)
-  (find-divisor-2 n 2))
+  (if (divides? n 2)
+      2
+      (find-divisor-2 n 3)     
+      )
+  )
 
 (define-proc (find-divisor-2 n test-divisor)
   (cond ((> (square test-divisor) n) n)
         ((divides? test-divisor n) test-divisor)
-        (else (find-divisor-2 n (next-divisor test-divisor) ))
+        (else (find-divisor-2 n (+ test-divisor 2) ))
         )
   )
 
@@ -22,13 +26,6 @@
 (define (divides? a b)
   (= (remainder b a) 0)
   )
-
-(define (next-divisor divisor)
-  (if (= divisor 2)
-      3
-      (+ divisor 2)
-   )
-)
                             
 (define (prime-test n)
   (display n)
