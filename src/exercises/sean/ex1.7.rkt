@@ -85,6 +85,7 @@
 ; 3. iterate until NO change (very good results!)
 ; ref: http://community.schemewiki.org/?sicp-ex-1.7 by GWB
 (define (good-enough-3? guess x)
+  ; note: could improve perf by removing call to 'improve' and adding a 'previous-guess' param
   ; limited precision: so eventually stops changing
   (= guess (improve guess x)))
 
