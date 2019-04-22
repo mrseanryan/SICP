@@ -61,6 +61,7 @@
 
 (display "____________________\n")
 
+; note: could improve perf by removing call to 'improve' and adding a 'previous-guess' param
 (define (good-enough-2? guess x) 
   (= guess (improve guess x))
      ) 
