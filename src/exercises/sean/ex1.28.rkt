@@ -15,10 +15,10 @@
 ; A “nontrivial square root of 1 modulo n,”
 ; = a number not equal to 1 or n - 1 whose square is equal to '1 modulo n'
 ; so b^2 / n has remainder 1
-(define (is-non-trivial-root? b n)
+(define (is-non-trivial-root? b n b-squared)
   (cond ((= b 1) #f)
         ((= b (- n 1)) #f)
-        ( (= (remainder (square b) n) 1) #t)
+        ( (= (remainder b-squared n) 1) #t)
         (else #f)
         )
   )
@@ -33,11 +33,15 @@
 ; like 'rem base^exp m', using successive squaring for efficiency
 (define (expmod base exp m)
   (define (miller-or-remainder exp-calc)
-    (cond ((is-non-trivial-root? exp-calc m) 0)
-          (else (remainder (square exp-calc) m))
+    (miller-or-remainder- exp-calc (square exp-calc))
+    )
+
+  (define (miller-or-remainder- exp-calc exp-calc-squared)
+    (cond ((is-non-trivial-root? exp-calc m exp-calc-squared) 0)
+          (else (remainder exp-calc-squared m))
           )
     )
-  
+
   (cond ( (= exp 0) 1 )
         ((even? exp) (miller-or-remainder (expmod base (/ exp 2) m) ) )
         (else (remainder (* base (expmod base (- exp 1) m) ) m ) )
