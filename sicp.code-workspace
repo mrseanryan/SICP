@@ -7,6 +7,7 @@
   "settings": {
     "files.exclude": {
       "**/*.rkt#1#": true,
+      "**/*.rkt~": true,
       "**/compiled": true
     }
   },
