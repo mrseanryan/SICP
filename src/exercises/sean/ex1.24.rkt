@@ -4,7 +4,7 @@
 (require "section-1.2.6.rkt")
 (require "utils-define-sourced-proc.rkt")
                             
-(define (prime-test n)
+(define (prime-test? n)
   (if (fast-prime? n)
       (report-is-prime n)
       (report-is-not-prime)
@@ -36,7 +36,7 @@
 (define-proc (search-for-primes-count start [count-to-find 3])
   (if (= count-to-find 0)
       #t
-      (if (prime-test start) 
+      (if (prime-test? start) 
           (search-for-primes-count (+ start 2) (- count-to-find 1))
           (search-for-primes-count (+ start 2) count-to-find)
           )
