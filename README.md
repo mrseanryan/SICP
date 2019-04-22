@@ -18,6 +18,12 @@ https://mitpress.mit.edu/sites/default/files/sicp/index.html
 
 http://sarabander.github.io/sicp/html/index.xhtml
 
+#### PDF
+
+https://github.com/sarabander/sicp-pdf.git
+
+https://web.mit.edu/alexmv/6.037/sicp.pdf
+
 #### lectures, course notes, assignments
 
 MIT resouces: https://ocw.mit.edu/search/ocwsearch.htm?q=sicp
