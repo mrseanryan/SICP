@@ -4,7 +4,12 @@
       "path": "."
     }
   ],
-  "settings": {},
+  "settings": {
+    "files.exclude": {
+      "**/*.rkt#1#": true,
+      "**/compiled": true
+    }
+  },
   "extensions": {
     "recommendations": [
       "sjhuangx.vscode-scheme",
