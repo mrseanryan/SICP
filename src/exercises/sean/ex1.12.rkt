@@ -79,3 +79,6 @@
 (test-fun fun 8)
 (test-fun fun 9)
 (test-fun fun 10)
+
+; TODO - try the factorial approach
+; ref: https://stackoverflow.com/questions/25096781/tail-recursive-pascal-triangle-in-scheme

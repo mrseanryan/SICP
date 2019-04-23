@@ -41,6 +41,7 @@
 
 (define (fun-iter-inner n3 n2 n1 count)
   (if (= count 0) n3
+      ; TODO could optimise here - last n2 n1 are discarded (compare to the 'counting up' solution)
       (fun-iter-inner n2 n1 (+ n1 (* 2 n2) (* 3 n3) ) (- count 1) ) 
       )
   )
