@@ -1,6 +1,6 @@
 #lang racket
 
-;;;SECTION 1.1.7
+; SECTION 1.1.7
 
 (define (sqrt-iter guess x)
   (if (good-enough? guess x)

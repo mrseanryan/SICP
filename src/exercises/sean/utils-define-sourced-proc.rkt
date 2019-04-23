@@ -6,7 +6,7 @@
 
 (require (for-syntax racket/syntax))
 
-;; Optional: Just for nicer output
+; Optional: Just for nicer output
 (define (write-sourced x port mode)
   (define f (case mode
               [(#t) write]
@@ -16,11 +16,11 @@
 
 (struct sourced (proc sexpr)
         #:property prop:procedure (struct-field-index proc)
-        ;; Optional: Just to make cleaner output
+        ; Optional: Just to make cleaner output
         #:methods gen:custom-write
         [(define write-proc write-sourced)])
 
-;; A macro to make it easier to use the `sourced` struct
+; A macro to make it easier to use the `sourced` struct
 (define-syntax (define-proc stx)
   (syntax-case stx ()
     [(_ (id arg ...) expr ...)
