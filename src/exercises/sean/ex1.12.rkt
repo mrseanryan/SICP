@@ -76,16 +76,15 @@
   (fun-row row 0 pascal-cell-fun)
   )
 
-
-(define (test-fun func n pascal-cell-fun)
+(define (format-output func n pascal-cell-fun)
   (display (format "~a = ~a\n" (pow-str "(x + y)" n) (func n pascal-cell-fun)))
   )
 
-(define (test-pascal pascal-cell-fun)
+(define (test-pascal pascal-cell-fun caller-fun total-rows)
   (let loop ((i 0))
-    (if (<= i 10)
+    (if (<= i total-rows)
         (begin
-          (test-fun fun i pascal-cell-fun)
+          (caller-fun fun i pascal-cell-fun)
           (loop (add1 i))
           )
         )
@@ -97,5 +96,7 @@
 ;(trace pascal-recursive)
 ;(trace pascal-factorial)
 
-(test-pascal pascal-recursive)
-(test-pascal pascal-factorial)
+(test-pascal pascal-recursive format-output 10)
+(test-pascal pascal-factorial format-output 10)
+
+(provide test-pascal pascal-recursive pascal-factorial)
