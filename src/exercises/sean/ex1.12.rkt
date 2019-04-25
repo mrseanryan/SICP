@@ -5,10 +5,10 @@
 (display "_____________________________\n")
 (display "Pascal's triangle -> binomial expansion \n");
 
-(define (fun-cell row column)
-  (if (or (= row 1) (= column 1) (= row column)) 1
-      (+ (fun-cell (sub1 row) (sub1 column)  )
-         (fun-cell (sub1 row) column ) )
+(define (pascal-recursive row column)
+  (if (or (= row 0) (= column 0) (= row column)) 1
+      (+ (pascal-recursive row (sub1 column)  )
+         (pascal-recursive (sub1 row) (sub1 column) ) )
       )
   )
 
@@ -20,16 +20,17 @@
         )
   )
 
+;; xxx remove
 (define (pow num exp)
-  (pow-str num (- exp 1))
+  (pow-str num exp)
   )
 
 ; get the binomial expansion
 (define (get-exponentials row cell)
-  (cond ((= cell 1)  (pow "x" row) )
+  (cond ((= cell 0)  (pow "x" row) )
         ((= cell row) (pow "y" row) )
         (else
-         (format "~a.~a" (pow "x" (inc (- row cell))) (pow "y" cell) )
+         (format "~a.~a" (pow "x" (- row cell)) (pow "y" cell) )
          ) 
         )
   )
@@ -42,39 +43,41 @@
   (if (= n 1) "" n )
   )
 
-(define (format-row-cell row cell)
-  (format "~a~a ~a"  (no-ones (fun-cell row cell)) (get-exponentials row cell) (get-plus row cell)  )
+(define (format-row-cell row cell pascal-cell-fun)
+  (format "~a~a ~a"  (no-ones (pascal-cell-fun row cell)) (get-exponentials row cell) (get-plus row cell)  )
   )
 
-(define (fun-row row cell)  
+(define (fun-row row cell pascal-cell-fun)  
   (if (< cell row)
-      (format "~a~a" (format-row-cell row cell) (fun-row row (+ cell 1)))
-      (format-row-cell row cell)
+      (format "~a~a" (format-row-cell row cell pascal-cell-fun) (fun-row row (+ cell 1) pascal-cell-fun))
+      (format-row-cell row cell pascal-cell-fun)
       )
   )
 ; END FORMATTING
 
-(define (fun row)
-  (fun-row row 1)
+(define (fun row pascal-cell-fun)
+  (fun-row row 0 pascal-cell-fun)
   )
 
 
-(define (test-fun func n)
-  (display (format "~a = ~a\n" (pow "(x + y)" n) (func n)))
+(define (test-fun func n pascal-cell-fun)
+  (display (format "~a = ~a\n" (pow "(x + y)" n) (func n pascal-cell-fun)))
   )
 
 ;(trace fun)
 
-(test-fun fun 1)
-(test-fun fun 2)
-(test-fun fun 3)
-(test-fun fun 4)
-(test-fun fun 5)
-(test-fun fun 6)
-(test-fun fun 7)
-(test-fun fun 8)
-(test-fun fun 9)
-(test-fun fun 10)
+(define (test-pascal pascal-cell-fun)
+  (let loop ((i 0))
+    (if (<= i 10)
+        (begin
+          (test-fun fun i pascal-cell-fun)
+          (loop (add1 i))
+          )
+        )
+    ) 
+  )
+
+(test-pascal pascal-recursive)
 
 ; TODO - try the factorial approach
 ; ref: https://stackoverflow.com/questions/25096781/tail-recursive-pascal-triangle-in-scheme
