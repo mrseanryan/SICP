@@ -81,8 +81,6 @@
   (display (format "~a = ~a\n" (pow-str "(x + y)" n) (func n pascal-cell-fun)))
   )
 
-;(trace fun)
-
 (define (test-pascal pascal-cell-fun)
   (let loop ((i 0))
     (if (<= i 10)
@@ -93,6 +91,11 @@
         )
     ) 
   )
+
+; Tracing shows that pascal-factorial is not growing its call stack (tail-recursive)
+;
+;(trace pascal-recursive)
+;(trace pascal-factorial)
 
 (test-pascal pascal-recursive)
 (test-pascal pascal-factorial)
