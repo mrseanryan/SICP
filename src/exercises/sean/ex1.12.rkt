@@ -2,9 +2,6 @@
 (require sicp)
 (require racket/trace)
 
-(display "_____________________________\n")
-(display "Pascal's triangle -> binomial expansion \n");
-
 (define (pascal-recursive column row) 
   (if (or (zero? row) (= column row))
       1
@@ -96,7 +93,15 @@
 ;(trace pascal-recursive)
 ;(trace pascal-factorial)
 
+
+
+(display "_____________________________\n")
+(display "Pascal's triangle -> binomial expansion \n");
+(display "recursive\n")
 (test-pascal pascal-recursive format-output 10)
+
+(display "_____________________________\n")
+(display "tail-recursive\n")
 (test-pascal pascal-factorial format-output 10)
 
 (provide test-pascal pascal-recursive pascal-factorial)
