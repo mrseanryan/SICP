@@ -6,14 +6,10 @@
 (display "Pascal's triangle -> binomial expansion \n");
 
 (define (fun-cell row column)
-  (cond ((= row 1) 1)
-        ((= row 2) 1)
-        ((= column 1) 1)
-        ((= column row) 1)
-
-        (else   (+ (fun-cell (- row 1) (- column 1)  )
-                   (fun-cell (- row 1) column ) )
-                ))
+  (if (or (= row 1) (= column 1) (= row column)) 1
+      (+ (fun-cell (sub1 row) (sub1 column)  )
+         (fun-cell (sub1 row) column ) )
+      )
   )
 
 ; BEGIN FORMATTING
