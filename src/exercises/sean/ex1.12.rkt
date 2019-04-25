@@ -23,14 +23,13 @@
 ; 3. Any other elements can be solved by formula:
 ;       row! / ( column! x (row - column)! )
 ;
-;
 (define (pascal-factorial row col)
   (define (factorial from to acc)
     (if (> from to)
         acc
         (factorial (+ 1 from) to (* acc from))))
 
-  ; let* - local variables
+  ; let* - local bindings
   ; x! = x factorial
   ; rmc = row-minus-column
   ; fac-rmc = row-minus-column!
