@@ -12,24 +12,37 @@
   )
 
 ; ref: https://stackoverflow.com/questions/25096781/tail-recursive-pascal-triangle-in-scheme
-;(define (pascal x y) 
-;(if (or (zero? y) (= x y))
-;1
-;(+ (pascal (sub1 x) y)
-;(pascal (sub1 x) (sub1 y)))))
-
-; ref: https://stackoverflow.com/questions/25096781/tail-recursive-pascal-triangle-in-scheme
+;
+; notes added by sean
+;
+; ref: https://stackoverflow.com/questions/34297481/tail-recursion-calling-tail-recursion/34299362#34299362
+; pascal triangle has this properties:
+;
+; 1. First and last item in every line of pascal triangle is '1'
+; 2. Second and penultimate is number of line
+; 3. Any other elements can be solved by formula:
+;       row! / ( column! x (row - column)! )
+;
+;
 (define (pascal-factorial row col)
   (define (factorial from to acc)
     (if (> from to)
         acc
         (factorial (+ 1 from) to (* acc from))))
 
+  ; let* - local variables
+  ; x! = x factorial
+  ; rmc = row-minus-column
+  ; fac-rmc = row-minus-column!
+  ; fac-col = column!
+  ; fac-row = row!
   (let* ((rmc (- row col))
          (fac-rmc (factorial 1 rmc 1))
-         (fac-pos (factorial (+ rmc 1) col fac-rmc))
-         (fac-row (factorial (+ col 1) row fac-pos)))
-    (/ fac-row fac-pos fac-rmc)))
+         (fac-col (factorial (+ rmc 1) col fac-rmc))
+         (fac-row (factorial (+ col 1) row fac-col)))
+    (/ fac-row fac-col fac-rmc)
+    )
+  )
 
 ; BEGIN FORMATTING
 (define (pow-str num exp)
@@ -92,8 +105,6 @@
 ;
 ;(trace pascal-recursive)
 ;(trace pascal-factorial)
-
-
 
 (display "_____________________________\n")
 (display "Pascal's triangle -> binomial expansion \n");
