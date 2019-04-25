@@ -5,10 +5,12 @@
 (display "_____________________________\n")
 (display "Pascal's triangle -> binomial expansion \n");
 
-(define (pascal-recursive row column)
-  (if (or (= row 0) (= column 0) (= row column)) 1
-      (+ (pascal-recursive row (sub1 column)  )
-         (pascal-recursive (sub1 row) (sub1 column) ) )
+(define (pascal-recursive column row) 
+  (if (or (zero? row) (= column row))
+      1
+      (+ (pascal-recursive (sub1 column) row)
+         (pascal-recursive (sub1 column) (sub1 row))
+         )
       )
   )
 
