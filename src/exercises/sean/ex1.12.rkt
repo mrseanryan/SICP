@@ -12,6 +12,26 @@
       )
   )
 
+; ref: https://stackoverflow.com/questions/25096781/tail-recursive-pascal-triangle-in-scheme
+;(define (pascal x y) 
+;(if (or (zero? y) (= x y))
+;1
+;(+ (pascal (sub1 x) y)
+;(pascal (sub1 x) (sub1 y)))))
+
+; ref: https://stackoverflow.com/questions/25096781/tail-recursive-pascal-triangle-in-scheme
+(define (pascal-factorial row col)
+  (define (factorial from to acc)
+    (if (> from to)
+        acc
+        (factorial (+ 1 from) to (* acc from))))
+
+  (let* ((rmc (- row col))
+         (fac-rmc (factorial 1 rmc 1))
+         (fac-pos (factorial (+ rmc 1) col fac-rmc))
+         (fac-row (factorial (+ col 1) row fac-pos)))
+    (/ fac-row fac-pos fac-rmc)))
+
 ; BEGIN FORMATTING
 (define (pow-str num exp)
   (cond ((= exp 0) 1)
@@ -73,6 +93,4 @@
   )
 
 (test-pascal pascal-recursive)
-
-; TODO - try the factorial approach
-; ref: https://stackoverflow.com/questions/25096781/tail-recursive-pascal-triangle-in-scheme
+(test-pascal pascal-factorial)
