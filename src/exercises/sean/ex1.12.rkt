@@ -20,17 +20,12 @@
         )
   )
 
-;; xxx remove
-(define (pow num exp)
-  (pow-str num exp)
-  )
-
 ; get the binomial expansion
 (define (get-exponentials row cell)
-  (cond ((= cell 0)  (pow "x" row) )
-        ((= cell row) (pow "y" row) )
+  (cond ((= cell 0)  (pow-str "x" row) )
+        ((= cell row) (pow-str "y" row) )
         (else
-         (format "~a.~a" (pow "x" (- row cell)) (pow "y" cell) )
+         (format "~a.~a" (pow-str "x" (- row cell)) (pow-str "y" cell) )
          ) 
         )
   )
@@ -61,7 +56,7 @@
 
 
 (define (test-fun func n pascal-cell-fun)
-  (display (format "~a = ~a\n" (pow "(x + y)" n) (func n pascal-cell-fun)))
+  (display (format "~a = ~a\n" (pow-str "(x + y)" n) (func n pascal-cell-fun)))
   )
 
 ;(trace fun)
