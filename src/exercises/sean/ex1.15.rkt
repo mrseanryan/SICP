@@ -19,6 +19,12 @@
 
 (provide sine)
 
+; Testing different thresholds:
+; 0.01 = p called 7 times, val -= -0.40438666 (google says -0.40444382284)
+; 0.1 = p called 5 times, val = -0.3998
+; 0.3 = p called 4 times, val = -0.361932886586251
+;
+; so using 0.1 as opposed to 0.01 might not be worth the saving in time, unless repeated often?
 
 ;(trace sine)
 ;(trace p)
