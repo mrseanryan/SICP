@@ -35,7 +35,6 @@
 
 (define (iter-mult a b)
   (cond ((= b 0) 0)
-        ((= b 1) a)
         (  (even b) (double (iter-mult a (halve b))) )
         (else (+ a (iter-mult a (- b 1) ) ) )       
         )
@@ -46,7 +45,6 @@
 
 (define (iter-mult-inv a b c)
   (cond ((= b 0) c)
-        ;((= b 1) a)
         (  (even b) (iter-mult-inv (double a) (halve b) c) )
         (else (iter-mult-inv a (- b 1) (+ c a) ) )    
         )
