@@ -1,6 +1,41 @@
 #lang racket
 (require racket/trace)
 
+
+(define (cube x)
+  (* x x x)
+  )
+
+(display "expected integral (cube 0..1): 0.25\n")
+
+(define (error r)
+  (abs (- r 0.25))
+  )
+
+;________________________________________
+(display "integral - error\n")
+
+(define (sum term a next b)
+  (if (> a b)
+      0
+      (+ (term a)
+         (sum term (next a) next b)
+         )
+      )
+  )
+
+(define (integral f a b dx)
+  (define (add-dx x) (+ x dx))
+  (* (sum f (+ a (/ dx 2.0)) add-dx b)
+     dx)
+  )
+
+(error (integral cube 0 1 0.01))
+(error (integral cube 0 1 0.001))
+
+;________________________________________
+(display "simpsons-integration - error\n")
+
 (define (simpsons-integration f a b n)
   (define (h)
     (/ (- b a) n)
@@ -36,10 +71,5 @@
   (* (/ (h) 3.0) (add-for-k 0 0) )
   )
 
-(define (cube x)
-  (* x x x)
-  )
-
-(display "expected: 0.25\n")
-(simpsons-integration cube 0 1 100)
-(simpsons-integration cube 0 1 1000)
+(error (simpsons-integration cube 0 1 100))
+(error (simpsons-integration cube 0 1 1000))
