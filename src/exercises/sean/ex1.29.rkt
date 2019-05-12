@@ -19,14 +19,14 @@
   
   (define (calc-y-term k)
     (cond
-      ((or (= k 0) (= k 1)) (y k))
+      ((or (= k 0) (= k n)) (y k))
       (else (* (calc-y-coeff k) (y k)) )      
       )    
     )
 
   (define (calc-y-coeff k)
     (define (odd)
-      (= (remainder k 2) 0)
+      (= (remainder k 2) 1)
       )
     (if (odd) 4
         2
